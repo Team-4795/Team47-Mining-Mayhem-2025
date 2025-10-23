@@ -20,4 +20,13 @@ public final class Constants {
     public static final int kRightChannel = 1; 
     public static final int kLeftChannel = 0; 
   }
+  
+  public static class IntakeConstants {
+    public static final int kRightChannel = 3; 
+    public static final int kLeftChannel = 2;
+
+    // TODO: change these values 
+    public static final double kIntakeSpeed = 1.0; 
+    public static final double kOuttakeSpeed = -1.0; 
+  }
 }
