@@ -1,19 +1,21 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
 import frc.robot.Constants; 
 
 public class IntakeSubsystem extends SubsystemBase {
-  private VictorSP rightMotor;
-  private VictorSP leftMotor;
+  private SparkMax rightMotor;
+  private SparkMax leftMotor;
 
   public IntakeSubsystem () {
-      rightMotor = new VictorSP(Constants.IntakeConstants.kRightChannel);
-      leftMotor = new VictorSP(Constants.IntakeConstants.kLeftChannel);
+      rightMotor = new SparkMax(Constants.IntakeConstants.kRightChannel, MotorType.kBrushless);
+      leftMotor = new SparkMax(Constants.IntakeConstants.kLeftChannel, MotorType.kBrushless);
   }
 
   /**
