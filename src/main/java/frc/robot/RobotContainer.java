@@ -27,7 +27,12 @@ public class RobotContainer {
     ));
 
     // Add bindings to intake and outtake
-    m_driverController.leftBumper().whileTrue(intakeSubsystem.intake());
-    m_driverController.rightBumper().whileTrue(intakeSubsystem.outtake());
+    m_driverController.leftBumper()
+      .onTrue(intakeSubsystem.intake())
+      .onFalse(intakeSubsystem.stop());
+
+    m_driverController.rightBumper().
+      onTrue(intakeSubsystem.outtake())
+      .onFalse(intakeSubsystem.stop());
   }
 }

@@ -45,4 +45,11 @@ public class IntakeSubsystem extends SubsystemBase {
   public Command outtake() {
     return this.spin(Constants.IntakeConstants.kOuttakeSpeed);
   }
+  /**
+   * Stops the intake motors 
+   * @return a command
+   */
+  public Command stop() {
+    return this.spin(0);
+  }
 }
