@@ -29,4 +29,10 @@ public final class Constants {
     public static final double kIntakeSpeed = 1.0; 
     public static final double kOuttakeSpeed = -1.0; 
   }
+  public static class ArmConstants {
+    public static final int kMotorChannel = 4;
+    public static final double kUpSpeed = 1.0;
+    public static final double kDownSpeed = -1.0;
+  }
+ 
 }
