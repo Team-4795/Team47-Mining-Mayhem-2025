@@ -10,12 +10,11 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import frc.robot.Constants; 
 
 public class IntakeSubsystem extends SubsystemBase {
-  private SparkMax rightMotor;
-  private SparkMax leftMotor;
+  
+  private SparkMax motor;
 
   public IntakeSubsystem () {
-      rightMotor = new SparkMax(Constants.IntakeConstants.kRightChannel, MotorType.kBrushless);
-      leftMotor = new SparkMax(Constants.IntakeConstants.kLeftChannel, MotorType.kBrushless);
+      motor = new SparkMax(Constants.IntakeConstants.kMotorChannel, MotorType.kBrushless);
   }
 
   /**
@@ -25,8 +24,8 @@ public class IntakeSubsystem extends SubsystemBase {
   public Command spin(double speed) {
     return Commands.parallel(
         // TODO: change which motor is negated based on design 
-        this.runOnce(() -> rightMotor.set(-speed)),
-        this.runOnce(() -> leftMotor.set(speed))
+        // this.runOnce(() -> rightMotor.set(-speed)),
+        this.runOnce(() -> motor.set(speed))
     );
   }
 

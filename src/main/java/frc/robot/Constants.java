@@ -22,8 +22,7 @@ public final class Constants {
   }
   
   public static class IntakeConstants {
-    public static final int kRightChannel = 3; 
-    public static final int kLeftChannel = 2;
+    public static final int kMotorChannel = 2;
 
     // TODO: change these values 
     public static final double kIntakeSpeed = 1.0; 
