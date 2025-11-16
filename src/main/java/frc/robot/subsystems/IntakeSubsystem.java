@@ -13,8 +13,15 @@ public class IntakeSubsystem extends SubsystemBase {
   
   private SparkMax motor;
 
+  private static IntakeSubsystem instance;
+
   public IntakeSubsystem () {
       motor = new SparkMax(Constants.IntakeConstants.kMotorChannel, MotorType.kBrushless);
+      IntakeSubsystem.instance = this;
+  }
+
+  public static IntakeSubsystem getInstance() {
+    return instance;
   }
 
   /**

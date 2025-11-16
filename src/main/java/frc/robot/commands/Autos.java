@@ -4,7 +4,9 @@
 
 package frc.robot.commands;
 
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
@@ -17,4 +19,16 @@ public final class Autos {
   private Autos() {
     throw new UnsupportedOperationException("This is a utility class!");
   }
+  public static Command scoreCart() {
+    return Commands.sequence(
+      IntakeSubsystem.getInstance().intake(),
+      Commands.waitSeconds(1.0),
+      ArmSubsystem.getInstance().down(),
+      Commands.waitSeconds(1.0),
+      IntakeSubsystem.getInstance().outtake(),
+      Commands.waitSeconds(1.0),
+      ArmSubsystem.getInstance().down()
+    );
+  }
+
 }

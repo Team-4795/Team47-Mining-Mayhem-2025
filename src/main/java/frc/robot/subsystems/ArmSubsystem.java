@@ -9,10 +9,15 @@ import frc.robot.Constants;
 
 public class ArmSubsystem extends SubsystemBase {
   private SparkMax motor;
+  private static ArmSubsystem instance;
 
   public ArmSubsystem() {
     motor = new SparkMax(Constants.ArmConstants.kMotorChannel, MotorType.kBrushless); 
-  
+    ArmSubsystem.instance = this;
+  }
+
+  public static ArmSubsystem getInstance() {
+    return ArmSubsystem.instance;
   }
 
   public Command spin(double speed) {
@@ -28,4 +33,5 @@ public class ArmSubsystem extends SubsystemBase {
   public Command stop() {
     return spin(0);
   }
+  
 }
