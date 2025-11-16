@@ -27,7 +27,7 @@ public final class Autos {
       Commands.waitSeconds(1.0),
       IntakeSubsystem.getInstance().outtake(),
       Commands.waitSeconds(1.0),
-      ArmSubsystem.getInstance().down()
+      ArmSubsystem.getInstance().up()
     );
   }
 
