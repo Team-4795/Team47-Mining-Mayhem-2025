@@ -39,12 +39,10 @@ public class RobotContainer {
     
     // add bindings for da arm
     m_driverController.leftTrigger()
-      .onTrue(armSubsystem.up())
-      .onFalse(armSubsystem.stop());
+      .onTrue(armSubsystem.up());
 
     m_driverController.rightTrigger()
-      .onTrue(armSubsystem.down())
-      .onFalse(armSubsystem.stop());
+      .onTrue(armSubsystem.down());
   }
    public Command getAutonomousCommand() {
     // An example command will be run in autonomous
