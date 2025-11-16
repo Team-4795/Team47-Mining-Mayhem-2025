@@ -32,12 +32,10 @@ public class RobotContainer {
 
     // Add bindings to intake and outtake
     m_driverController.leftBumper()
-      .onTrue(intakeSubsystem.intake())
-      .onFalse(intakeSubsystem.stop());
+      .onTrue(intakeSubsystem.intake());
 
     m_driverController.rightBumper().
-      onTrue(intakeSubsystem.outtake())
-      .onFalse(intakeSubsystem.stop());
+      onTrue(intakeSubsystem.outtake());
     
     // add bindings for da arm
     m_driverController.leftTrigger()
