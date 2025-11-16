@@ -22,11 +22,11 @@ public final class Autos {
   public static Command scoreCart() {
     return Commands.sequence(
       IntakeSubsystem.getInstance().intake(),
-      Commands.waitSeconds(1.0),
+      Commands.waitSeconds(0.05),
       ArmSubsystem.getInstance().down(),
-      Commands.waitSeconds(1.0),
+      Commands.waitSeconds(0.05),
       IntakeSubsystem.getInstance().outtake(),
-      Commands.waitSeconds(1.0),
+      Commands.waitSeconds(0.05),
       ArmSubsystem.getInstance().up()
     );
   }

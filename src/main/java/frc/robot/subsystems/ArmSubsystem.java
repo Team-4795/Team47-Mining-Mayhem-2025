@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
@@ -21,15 +22,20 @@ public class ArmSubsystem extends SubsystemBase {
   }
 
   public Command spin(double speed) {
-    return this.runOnce(() -> motor.set(speed));  
+    return this.runOnce(() -> motor.set(speed));
   }
 
   public Command up() {
-    return spin(Constants.ArmConstants.kUpSpeed);
+    return spin(Constants.ArmConstants.kUpSpeed)
+      .andThen(Commands.waitSeconds(Constants.ArmConstants.kUpWaitTime))
+      .andThen(stop());  
   }
   public Command down() {
-    return spin(Constants.ArmConstants.kDownSpeed);
+    return spin(Constants.ArmConstants.kDownSpeed)
+      .andThen(Commands.waitSeconds(Constants.ArmConstants.kDownWaitTime))
+      .andThen(stop());  
   }
+
   public Command stop() {
     return spin(0);
   }

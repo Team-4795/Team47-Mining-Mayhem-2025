@@ -35,6 +35,9 @@ public final class Constants {
     public static final int kMotorChannel = 4;
     public static final double kUpSpeed = 1.0;
     public static final double kDownSpeed = -1.0;
+
+    public static final double kDownWaitTime = 0.5;
+    public static final double kUpWaitTime = 0.5;
   }
  
 }
