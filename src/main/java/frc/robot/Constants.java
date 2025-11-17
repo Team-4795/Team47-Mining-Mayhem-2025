@@ -25,16 +25,16 @@ public final class Constants {
     public static final int kMotorChannel = 2;
 
     // TODO: change these values 
-    public static final double kIntakeSpeed = 1.0; 
+    public static final double kIntakeSpeed = 0.3; 
     public static final double kIntakeWaitTime = 0.5;
     public static final double kOuttakeWaitTime = 0.5;
-    public static final double kOuttakeSpeed = -1.0; 
+    public static final double kOuttakeSpeed = -0.3; 
   }
 
   public static class ArmConstants {
     public static final int kMotorChannel = 4;
-    public static final double kUpSpeed = 1.0;
-    public static final double kDownSpeed = -1.0;
+    public static final double kUpSpeed = 0.3;
+    public static final double kDownSpeed = -0.3;
 
     public static final double kDownWaitTime = 0.5;
     public static final double kUpWaitTime = 0.5;
