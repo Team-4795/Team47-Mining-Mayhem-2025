@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -23,11 +24,22 @@ public final class Autos {
   private Autos() {
     throw new UnsupportedOperationException("This is a utility class!");
   }
+
   public static Command scoreCart() {
     return Commands.sequence(
       IntakeSubsystem.getInstance().outtake(),
       Commands.waitSeconds(0.1),
       ArmSubsystem.getInstance().up()
+    );
+  }
+
+  public static Command exitTeamZone() {
+    return Commands.sequence(
+      Commands.run(() -> DriveSubsystem.getInstance().arcadeDrive(-0.5, 0.25)),
+      Commands.waitSeconds(Constants.AutoConstants.kTurnWaitTime),
+      Commands.runOnce(() -> DriveSubsystem.getInstance().arcadeDrive(-0.5, 0)),
+      Commands.waitSeconds(Constants.AutoConstants.kReverseWaitTime),
+      Commands.runOnce(() -> DriveSubsystem.getInstance().arcadeDrive(0, 0))
     );
   }
 

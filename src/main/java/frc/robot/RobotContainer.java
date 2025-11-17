@@ -6,6 +6,7 @@ import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
@@ -46,7 +47,11 @@ public class RobotContainer {
   }
    public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-        return null;   
+    return Commands.sequence(
+      Autos.scoreCart(),
+      Commands.waitSeconds(Constants.AutoConstants.kCartTeamWaitTime),
+      Autos.exitTeamZone()
+    );
   }
     
 }

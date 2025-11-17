@@ -11,10 +11,16 @@ public class DriveSubsystem extends SubsystemBase {
   private VictorSP leftMotor;
   private DifferentialDrive drive;
 
+  private static DriveSubsystem instance;
+
   public DriveSubsystem () {
       rightMotor = new VictorSP(Constants.DrivebaseConstants.kRightChannel);
       leftMotor = new VictorSP(Constants.DrivebaseConstants.kLeftChannel);
       drive = new DifferentialDrive(leftMotor, rightMotor);
+  }
+
+  public static DriveSubsystem getInstance() {
+    return DriveSubsystem.instance;
   }
 
   public void arcadeDrive(double speed, double rotation) {

@@ -39,5 +39,11 @@ public final class Constants {
     public static final double kDownWaitTime = 0.5;
     public static final double kUpWaitTime = 0.5;
   }
+
+  public static class AutoConstants {
+    public static final double kTurnWaitTime = 0.3;
+    public static final double kReverseWaitTime = 0.3;
+    public static final double kCartTeamWaitTime = 0.3;
+  }
  
 }
