@@ -25,15 +25,13 @@ public final class Autos {
   }
   public static Command scoreCart() {
     return Commands.sequence(
-      IntakeSubsystem.getInstance().intake(),
-      Commands.waitSeconds(0.1),
-      ArmSubsystem.getInstance().down(),
-      Commands.waitSeconds(0.1),
       IntakeSubsystem.getInstance().outtake(),
       Commands.waitSeconds(0.1),
       ArmSubsystem.getInstance().up()
     );
   }
+
+
    public static Command grabBall(DriveSubsystem drive) {
     return Commands.sequence(
        Commands.run(() -> drive.arcadeDrive(1, 0)),
