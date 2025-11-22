@@ -29,8 +29,8 @@ public class RobotContainer {
     // Make drive subsystem default bindings
     driveSubsystem.setDefaultCommand(driveSubsystem.runOnce(
       () -> driveSubsystem.arcadeDrive(
-        m_driverController.getLeftY() / 1.002, 
-        m_driverController.getRightX() / 1.002
+        m_driverController.getLeftX() / 1.002, 
+        m_driverController.getRightY() / 1.002
       )
     ));
 
