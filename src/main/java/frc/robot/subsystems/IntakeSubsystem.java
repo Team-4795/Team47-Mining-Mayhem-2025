@@ -39,9 +39,7 @@ public class IntakeSubsystem extends SubsystemBase {
    * @return a command
    */
   public Command intake() {
-    return this.spin(Constants.IntakeConstants.kIntakeSpeed)
-      .andThen(Commands.waitSeconds(Constants.IntakeConstants.kIntakeWaitTime))
-      .andThen(this.stop());
+    return this.spin(Constants.IntakeConstants.kIntakeSpeed);
   }
 
   /**
@@ -49,9 +47,7 @@ public class IntakeSubsystem extends SubsystemBase {
    * @return a command
    */
   public Command outtake() {
-    return this.spin(Constants.IntakeConstants.kOuttakeSpeed)
-      .andThen(Commands.waitSeconds(Constants.IntakeConstants.kOuttakeWaitTime))
-      .andThen(this.stop());
+    return this.spin(Constants.IntakeConstants.kOuttakeSpeed);
   }
   /**
    * Stops the intake motors 

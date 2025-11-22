@@ -19,9 +19,13 @@ public final class Autos {
 
   public static Command scoreCart() {
     return Commands.sequence(
-      IntakeSubsystem.getInstance().outtake(),
+      IntakeSubsystem.getInstance().outtake()
+        .andThen(Commands.waitSeconds(Constants.IntakeConstants.kIntakeWaitTime))
+        .andThen(IntakeSubsystem.getInstance().stop()),
       Commands.waitSeconds(0.1),
       ArmSubsystem.getInstance().up()
+        .andThen(Commands.waitSeconds(Constants.ArmConstants.kUpWaitTime))
+        .andThen(ArmSubsystem.getInstance().stop())
     );
   }
 

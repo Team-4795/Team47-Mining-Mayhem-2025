@@ -25,14 +25,10 @@ public class ArmSubsystem extends SubsystemBase {
   }
 
   public Command up() {
-    return spin(Constants.ArmConstants.kUpSpeed)
-      .andThen(Commands.waitSeconds(Constants.ArmConstants.kUpWaitTime))
-      .andThen(stop());  
+    return spin(Constants.ArmConstants.kUpSpeed);
   }
   public Command down() {
-    return spin(Constants.ArmConstants.kDownSpeed)
-      .andThen(Commands.waitSeconds(Constants.ArmConstants.kDownWaitTime))
-      .andThen(stop());  
+    return spin(Constants.ArmConstants.kDownSpeed);
   }
 
   public Command stop() {
