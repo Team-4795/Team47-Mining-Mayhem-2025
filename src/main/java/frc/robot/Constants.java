@@ -23,7 +23,7 @@ public final class Constants {
   }
   
   public static class IntakeConstants {
-    public static final int kMotorChannel = 3;
+    public static final int kMotorChannel = 4;
 
     // TODO: change these values 
     public static final double kIntakeSpeed = 0.67; 
@@ -33,7 +33,7 @@ public final class Constants {
   }
 
   public static class ArmConstants {
-    public static final int kMotorChannel = 4;
+    public static final int kMotorChannel = 3;
     public static final double kUpSpeed = 0.3;
     public static final double kDownSpeed = -0.3;
 
@@ -42,8 +42,8 @@ public final class Constants {
   }
 
   public static class AutoConstants {
-    public static final double kTurnWaitTime = 2;
-    public static final double kReverseWaitTime = 0.3;
+    public static final double kTurnWaitTime = 0.3;
+    public static final double kReverseWaitTime = 2;
     public static final double kCartTeamWaitTime = 0.3;
   }
  
