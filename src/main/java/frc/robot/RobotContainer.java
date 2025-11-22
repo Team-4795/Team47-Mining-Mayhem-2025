@@ -17,6 +17,9 @@ public class RobotContainer {
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
+  private final CommandXboxController m_operatorController =
+    new CommandXboxController(OperatorConstants.kControllerPort);
+
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
@@ -26,20 +29,20 @@ public class RobotContainer {
     // Make drive subsystem default bindings
     driveSubsystem.setDefaultCommand(driveSubsystem.runOnce(
       () -> driveSubsystem.arcadeDrive(
-        m_driverController.getLeftX(), 
-        m_driverController.getRightX()
+        m_driverController.getLeftY() / 1.002, 
+        m_driverController.getRightX() / 1.002
       )
     ));
 
     // Add bindings to intake and outtake
-    m_driverController.leftBumper()
+    m_operatorController.leftBumper()
       .onTrue(intakeSubsystem.intake());
 
-    m_driverController.rightBumper().
+    m_operatorController.rightBumper().
       onTrue(intakeSubsystem.outtake());
     
     // add bindings for da arm
-    m_driverController.leftTrigger()
+    m_operatorController.leftTrigger()
       .onTrue(armSubsystem.up());
 
     m_driverController.rightTrigger()
