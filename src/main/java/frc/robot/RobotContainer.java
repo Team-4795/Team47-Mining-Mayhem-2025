@@ -34,19 +34,13 @@ public class RobotContainer {
       )
     ));
 
-    // Add bindings to intake and outtake
-    m_operatorController.leftBumper()
-      .onTrue(intakeSubsystem.intake()).onFalse(intakeSubsystem.stop());
+    intakeSubsystem.setDefaultCommand(intakeSubsystem.runOnce(
+      () -> intakeSubsystem.spin(m_operatorController.getRightX())
+    ));
 
-    m_operatorController.rightBumper().
-      onTrue(intakeSubsystem.outtake()).onFalse(intakeSubsystem.stop());
-    
-    // add bindings for da arm
-    m_operatorController.leftTrigger()
-      .onTrue(armSubsystem.up()).onFalse(armSubsystem.stop());
-
-    m_driverController.rightTrigger()
-      .onTrue(armSubsystem.down()).onFalse(armSubsystem.stop());
+    armSubsystem.setDefaultCommand(armSubsystem.runOnce(
+      () -> armSubsystem.spin(m_operatorController.getLeftX())
+    ));
   }
    public Command getAutonomousCommand() {
     // An example command will be run in autonomous
