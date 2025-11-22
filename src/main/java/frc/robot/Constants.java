@@ -18,12 +18,12 @@ public final class Constants {
     public static final int kControllerPort = 1;
   }
   public static class DrivebaseConstants {
-    public static final int kRightChannel = 3; 
-    public static final int kLeftChannel = 1; 
+    public static final int kRightChannel = 1; 
+    public static final int kLeftChannel = 0; 
   }
   
   public static class IntakeConstants {
-    public static final int kMotorChannel = 2;
+    public static final int kMotorChannel = 3;
 
     // TODO: change these values 
     public static final double kIntakeSpeed = 0.67; 
@@ -42,7 +42,7 @@ public final class Constants {
   }
 
   public static class AutoConstants {
-    public static final double kTurnWaitTime = 0.3;
+    public static final double kTurnWaitTime = 2;
     public static final double kReverseWaitTime = 0.3;
     public static final double kCartTeamWaitTime = 0.3;
   }

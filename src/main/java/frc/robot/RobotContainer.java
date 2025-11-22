@@ -29,8 +29,8 @@ public class RobotContainer {
     // Make drive subsystem default bindings
     driveSubsystem.setDefaultCommand(driveSubsystem.runOnce(
       () -> driveSubsystem.arcadeDrive(
-        m_driverController.getLeftX() / 1.002, 
-        m_driverController.getRightY() / 1.002
+        -m_driverController.getLeftY(), 
+        m_driverController.getRightX()
       )
     ));
 
@@ -42,13 +42,10 @@ public class RobotContainer {
       () -> armSubsystem.spin(m_operatorController.getLeftX())
     ));
   }
-   public Command getAutonomousCommand() {
+  
+  public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Commands.sequence(
-      Autos.scoreCart(),
-      Commands.waitSeconds(Constants.AutoConstants.kCartTeamWaitTime),
-      Autos.exitTeamZone()
-    );
+    return Autos.exitTeamZone();
   }
     
 }

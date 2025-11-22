@@ -31,8 +31,6 @@ public final class Autos {
 
   public static Command exitTeamZone() {
     return Commands.sequence(
-      Commands.run(() -> DriveSubsystem.getInstance().arcadeDrive(-0.5, 0.25)),
-      Commands.waitSeconds(Constants.AutoConstants.kTurnWaitTime),
       Commands.runOnce(() -> DriveSubsystem.getInstance().arcadeDrive(-0.5, 0)),
       Commands.waitSeconds(Constants.AutoConstants.kReverseWaitTime),
       Commands.runOnce(() -> DriveSubsystem.getInstance().arcadeDrive(0, 0))
